@@ -33,4 +33,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ OWNER_LC }}/arch-mpv:latest
+          tags: ghcr.io/${{ env.OWNER_LC }}/arch-mpv:latest
