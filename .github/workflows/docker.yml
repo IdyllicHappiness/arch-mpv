@@ -3,6 +3,10 @@ name: Build and Push Docker Image
 on:
   push:
     branches: [ "main" ]
+  schedule:
+    # In a public repository, scheduled workflows are automatically disabled when no repository activity has occurred in 60 days.
+    # For a deactivated scheduled workflow, if a user with write permissions to the repository makes a commit that changes the cron schedule on the workflow, the workflow will be reactivated, and that user will become the actor associated with any workflow runs
+    - cron:  '0 0 * * 0'
 
 jobs:
   docker:
